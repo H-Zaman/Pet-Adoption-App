@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CatModel{
-  String name;
-  String image;
-  double age;
-  String location;
-  Color color;
+  String? name;
+  String? image;
+  double? age;
+  String? location;
+  Color? color;
   CatModel({
     this.name,
     this.image,

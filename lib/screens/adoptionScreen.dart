@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AdoptTheCat extends StatelessWidget {
-  final CatModel data;
+  final CatModel? data;
   const AdoptTheCat({this.data});
   @override
   Widget build(BuildContext context) {
@@ -147,7 +147,7 @@ class AdoptTheCat extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
-                  gradient: getGradient(data.color)
+                  gradient: getGradient(data!.color!)
                 ),
                 child: Row(
                   children: [
@@ -188,21 +188,21 @@ class AdoptTheCat extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              data.name,
+                              data!.name!,
                               style: TextStyle(
                                 fontSize: 32,
                                 letterSpacing: 2,
                               ),
                             ),
                             Text(
-                              data.age.toString() + ' years',
+                              data!.age.toString() + ' years',
                               style: TextStyle(
                                 fontSize: 14,
                                 letterSpacing: 2,
                               ),
                             ),
                             Text(
-                              data.location,
+                              data!.location!,
                               style: TextStyle(
                                 fontSize: 18,
                                 letterSpacing: 2,
@@ -215,11 +215,11 @@ class AdoptTheCat extends StatelessWidget {
                     Expanded(
                       flex: 4,
                       child: Hero(
-                        tag: data.image,
+                        tag: data!.image!,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Image.asset(
-                            data.image,
+                            data!.image!,
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -316,14 +316,14 @@ class AdoptTheCat extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                comment.name,
+                                comment.name!,
                                 style: TextStyle(
                                   color: Color(0xff861E3F),
                                   fontSize: 18
                                 ),
                               ),
                               Text(
-                                comment.date,
+                                comment.date!,
                                 style: TextStyle(
                                   color: Color(0xff861E3F).withOpacity(.7),
                                   fontSize: 12
@@ -332,7 +332,7 @@ class AdoptTheCat extends StatelessWidget {
                             ],
                           ),
                           subtitle: Text(
-                            comment.comment
+                            comment.comment!
                           )
                         ),
                       );

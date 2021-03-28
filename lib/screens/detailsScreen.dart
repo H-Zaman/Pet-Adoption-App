@@ -5,7 +5,7 @@ import 'package:cat_adoption/screens/adoptionScreen.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
-  final CatModel data;
+  final CatModel? data;
   const DetailsScreen({this.data});
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class DetailsScreen extends StatelessWidget {
       ),
       body: Container(
         decoration: BoxDecoration(
-          gradient: getGradient(data.color)
+          gradient: getGradient(data!.color!)
         ),
         child: Column(
           children: [
@@ -29,11 +29,11 @@ class DetailsScreen extends StatelessWidget {
                   SizedBox(height: AppBar().preferredSize.height,),
                   Expanded(
                     child: Hero(
-                      tag: data.image,
+                      tag: data!.image!,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Image.asset(
-                          data.image,
+                          data!.image!,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -53,7 +53,7 @@ class DetailsScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          data.name,
+                          data!.name!,
                           style: TextStyle(
                               fontSize: 42,
                               letterSpacing: 2
@@ -63,14 +63,14 @@ class DetailsScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Text(
-                              data.age.toString() + ' years',
+                              data!.age.toString() + ' years',
                               style: TextStyle(
                                 fontSize: 14,
                                 letterSpacing: 1.5
                               ),
                             ),
                             Text(
-                              data.location,
+                              data!.location!,
                               style: TextStyle(
                                 fontSize: 16,
                                 letterSpacing: 1.5

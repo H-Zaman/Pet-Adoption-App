@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 class MoreButton extends StatelessWidget {
   final Function onTap;
-  const MoreButton({@required this.onTap});
+  const MoreButton({required this.onTap});
   @override
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(25),
-      onTap: onTap,
+      onTap: onTap as void Function()?,
       child: Container(
         decoration: BoxDecoration(
             color: Color(0xff861E3F),
